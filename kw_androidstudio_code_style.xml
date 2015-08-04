@@ -1,5 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <code_scheme name="kw_androidstudio_code_style">
+  <option name="OTHER_INDENT_OPTIONS">
+    <value>
+      <option name="INDENT_SIZE" value="3" />
+      <option name="CONTINUATION_INDENT_SIZE" value="6" />
+      <option name="TAB_SIZE" value="3" />
+      <option name="USE_TAB_CHARACTER" value="false" />
+      <option name="SMART_TABS" value="false" />
+      <option name="LABEL_INDENT_SIZE" value="0" />
+      <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+      <option name="USE_RELATIVE_INDENTS" value="false" />
+    </value>
+  </option>
   <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="99" />
   <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="99" />
   <option name="PACKAGES_TO_USE_IMPORT_ON_DEMAND">
@@ -51,6 +62,34 @@
     <option name="ALIGN_MULTILINE_LIST_OR_MAP" value="false" />
     <option name="ALIGN_NAMED_ARGS_IN_MAP" value="false" />
   </GroovyCodeStyleSettings>
+  <Objective-C-extensions>
+    <option name="GENERATE_INSTANCE_VARIABLES_FOR_PROPERTIES" value="ASK" />
+    <option name="RELEASE_STYLE" value="IVAR" />
+    <option name="TYPE_QUALIFIERS_PLACEMENT" value="BEFORE" />
+    <file>
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Import" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Macro" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Typedef" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Enum" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Constant" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Global" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Struct" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="FunctionPredecl" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Function" />
+    </file>
+    <class>
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Property" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="Synthesize" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="InitMethod" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="StaticMethod" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="InstanceMethod" />
+      <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="DeallocMethod" />
+    </class>
+    <extensions>
+      <pair source="cpp" header="h" />
+      <pair source="c" header="h" />
+    </extensions>
+  </Objective-C-extensions>
   <XML>
     <option name="XML_KEEP_LINE_BREAKS" value="false" />
     <option name="XML_KEEP_BLANK_LINES" value="1" />
@@ -94,6 +133,9 @@
     <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
     <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="0" />
     <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
+    <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACES" value="true" />
+    <option name="SPACE_BEFORE_ARRAY_INITIALIZER_LBRACE" value="true" />
+    <option name="SPACE_BEFORE_ANNOTATION_ARRAY_INITIALIZER_LBRACE" value="true" />
     <option name="CALL_PARAMETERS_WRAP" value="1" />
     <option name="METHOD_PARAMETERS_WRAP" value="1" />
     <option name="RESOURCE_LIST_WRAP" value="1" />
@@ -116,7 +158,7 @@
     <option name="PARAMETER_ANNOTATION_WRAP" value="1" />
     <option name="VARIABLE_ANNOTATION_WRAP" value="1" />
     <option name="SPACE_BEFORE_ANOTATION_PARAMETER_LIST" value="true" />
-    <option name="ENUM_CONSTANTS_WRAP" value="1" />
+    <option name="ENUM_CONSTANTS_WRAP" value="2" />
     <indentOptions>
       <option name="INDENT_SIZE" value="3" />
       <option name="CONTINUATION_INDENT_SIZE" value="6" />
@@ -124,281 +166,341 @@
     </indentOptions>
     <arrangement>
       <rules>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <FINAL />
-              <PUBLIC />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <FINAL />
-              <PROTECTED />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <FINAL />
-              <PACKAGE_PRIVATE />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <ENUM />
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <INTERFACE />
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <FINAL />
+                <PUBLIC />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <FINAL />
+                <PROTECTED />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <FINAL />
+                <PACKAGE_PRIVATE />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <ENUM />
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <INTERFACE />
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <CLASS />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
               <CLASS />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <CLASS />
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <FINAL />
+                <PRIVATE />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <PUBLIC />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <PROTECTED />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <PACKAGE_PRIVATE />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <PRIVATE />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <FINAL />
+                <PUBLIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <FINAL />
+                <PROTECTED />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <FINAL />
+                <PACKAGE_PRIVATE />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <FINAL />
+                <PRIVATE />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <PUBLIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <PROTECTED />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <PACKAGE_PRIVATE />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <FIELD />
+                <PRIVATE />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
               <FIELD />
-              <FINAL />
-              <PRIVATE />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <PUBLIC />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <PROTECTED />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <PACKAGE_PRIVATE />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <PRIVATE />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <FINAL />
-              <PUBLIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <FINAL />
-              <PROTECTED />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <FINAL />
-              <PACKAGE_PRIVATE />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <FINAL />
-              <PRIVATE />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <PUBLIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <PROTECTED />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <PACKAGE_PRIVATE />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <FIELD />
-              <PRIVATE />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <FIELD />
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <METHOD />
-              <PUBLIC />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <METHOD />
-              <PROTECTED />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <METHOD />
-              <PACKAGE_PRIVATE />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <METHOD />
-              <PRIVATE />
-              <STATIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <CONSTRUCTOR />
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <METHOD />
-              <PUBLIC />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <METHOD />
-              <PROTECTED />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <METHOD />
-              <PACKAGE_PRIVATE />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <METHOD />
-              <PRIVATE />
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <METHOD />
+                <PUBLIC />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <METHOD />
+                <PROTECTED />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <METHOD />
+                <PACKAGE_PRIVATE />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <METHOD />
+                <PRIVATE />
+                <STATIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <CONSTRUCTOR />
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <METHOD />
+                <PUBLIC />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <METHOD />
+                <PROTECTED />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <METHOD />
+                <PACKAGE_PRIVATE />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <METHOD />
+                <PRIVATE />
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
       </rules>
     </arrangement>
   </codeStyleSettings>
@@ -411,127 +513,154 @@
     </indentOptions>
     <arrangement>
       <rules>
-        <rule>
-          <match>
-            <AND>
-              <NAME>xmlns:android</NAME>
-              <XML_NAMESPACE>Namespace:</XML_NAMESPACE>
-            </AND>
-          </match>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>xmlns:.*</NAME>
-              <XML_NAMESPACE>Namespace:</XML_NAMESPACE>
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>.*:id</NAME>
-              <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
-            </AND>
-          </match>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>.*:name</NAME>
-              <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
-            </AND>
-          </match>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>name</NAME>
-              <XML_NAMESPACE>^$</XML_NAMESPACE>
-            </AND>
-          </match>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>style</NAME>
-              <XML_NAMESPACE>^$</XML_NAMESPACE>
-            </AND>
-          </match>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>.*</NAME>
-              <XML_NAMESPACE>^$</XML_NAMESPACE>
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>.*:layout_width</NAME>
-              <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
-            </AND>
-          </match>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>.*:layout_height</NAME>
-              <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
-            </AND>
-          </match>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>.*:layout_.*</NAME>
-              <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>.*:width</NAME>
-              <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>.*:height</NAME>
-              <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>.*</NAME>
-              <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
-        <rule>
-          <match>
-            <AND>
-              <NAME>.*</NAME>
-              <XML_NAMESPACE>.*</XML_NAMESPACE>
-            </AND>
-          </match>
-          <order>BY_NAME</order>
-        </rule>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>xmlns:android</NAME>
+                <XML_NAMESPACE>Namespace:</XML_NAMESPACE>
+              </AND>
+            </match>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>xmlns:.*</NAME>
+                <XML_NAMESPACE>Namespace:</XML_NAMESPACE>
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>.*:id</NAME>
+                <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+              </AND>
+            </match>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>.*:name</NAME>
+                <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+              </AND>
+            </match>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>name</NAME>
+                <XML_NAMESPACE>^$</XML_NAMESPACE>
+              </AND>
+            </match>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>style</NAME>
+                <XML_NAMESPACE>^$</XML_NAMESPACE>
+              </AND>
+            </match>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>.*</NAME>
+                <XML_NAMESPACE>^$</XML_NAMESPACE>
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>.*:layout_width</NAME>
+                <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+              </AND>
+            </match>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>.*:layout_height</NAME>
+                <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+              </AND>
+            </match>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>.*:layout_.*</NAME>
+                <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>.*:width</NAME>
+                <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>.*:height</NAME>
+                <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>.*</NAME>
+                <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
+        <section>
+          <rule>
+            <match>
+              <AND>
+                <NAME>.*</NAME>
+                <XML_NAMESPACE>.*</XML_NAMESPACE>
+              </AND>
+            </match>
+            <order>BY_NAME</order>
+          </rule>
+        </section>
       </rules>
     </arrangement>
   </codeStyleSettings>
 </code_scheme>
-
