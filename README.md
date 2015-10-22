@@ -19,7 +19,7 @@ To:
 
 **Mac:**
 
-* Copy *kw_androidstudio_code_style.xml* to *~/Library/Preferences/AndroidStudio/codestyles*.
+* Copy *kw_androidstudio_code_style.xml* to *~/Library/Preferences/AndroidStudio<Version>/codestyles*, e.g. *~/Library/Preferences/AndroidStudio1.4/codestyles*.
 * In Android Studio select Abdroid Studio -> Preferences -> Editor -> Code Style and choose *kw_androidstudio_code_style* as your scheme.
 
 **Windows:**
